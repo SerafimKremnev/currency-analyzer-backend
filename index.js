@@ -1,14 +1,17 @@
 const express = require('express');
 const sequelize = require('./db');
 const NewsController = require('./controller/newsController');
-const models = require('./models/models');
+
 const cors = require('cors')
+
 
 require('dotenv').config();
 
 const PORT = process.env.PORT || 8000
 const app = express();
 app.use(express.json())
+app.use(cors())
+
 
 app.get('/api/news', (req, res) => {
   NewsController.getAllNews(req, res)

@@ -3,6 +3,7 @@ const { New } = require('../models/models');
 const {getHistoricalExchangeRates} = require('../api/getCurrencyValues')
 const {scrappingSite} = require('../api/scrapping')
 
+
 class NewsController {
   async createNew(req, res) {
     const { title, content, image, description } = req.body;
